@@ -1,0 +1,47 @@
+﻿@{
+    ViewData["Title"] = "Authorization";
+}
+
+<div class="container d-flex flex-column">
+    <div class="row mt-4 justify-content-center">
+        <img src="~/images/Logo.svg" class="col-3"/>
+    </div>
+    <h1 class="row justify-content-center mt-2">Authorization</h1>
+
+    <form class="d-flex flex-column" method="post" asp-controller="Authentication" asp-action="Test">
+        <div class="row justify-content-center">
+            <div class="col-4">
+                <div class="form-group">
+                    <input type="text" class="form-control"aria-describedby="UsernameHelp" 
+                    placeholder="Username/Gmail" style="text-align:center;">
+                    <input type="text" class="form-control mt-2" aria-describedby="PasswordHelp" 
+                    placeholder="Password" style="text-align:center;">
+                </div>
+                <div class="d-flex justify-content-end">
+                    <button type="submit" class="btn mt-2" style="background-color: #757575;
+                     color: white;">
+                            Submit
+                    </button>
+                </div>
+                <div class="d-flex justify-content-center mt-5">
+                    <a asp-controller="" asp-action="" style="color:black; opacity:70%;">
+                        Click here if you forgot your password
+                    </a>
+                </div>
+            </div>
+
+
+        </div>
+
+        
+    </form>
+
+</div>
+
+<footer class="footer fixed-bottom"> 
+    <div class="text-muted py-4" style="background-color: #757575;">
+    <div class="container d-flex justify-content-center">
+        <span style="color:white;">TSU, HITs 2022</span>
+    </div>
+    </div>
+</footer>
