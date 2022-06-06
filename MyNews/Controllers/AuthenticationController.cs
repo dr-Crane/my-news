@@ -7,9 +7,19 @@ namespace MyNews.Controllers
 {
     public class AuthenticationController : Controller
     {
-        public IActionResult Index()
+        public IActionResult LogIn()
         {
             return View();
+        }
+
+        public IActionResult Registration()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Test()
+        {
+            return Ok("Alright");
         }
     }
 }
