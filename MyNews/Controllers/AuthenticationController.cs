@@ -16,6 +16,7 @@ namespace MyNews.Controllers
         {
             return View();
         }
+
         [HttpPost]
         public IActionResult Test()
         {
