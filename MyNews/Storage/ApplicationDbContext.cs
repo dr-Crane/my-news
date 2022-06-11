@@ -31,6 +31,7 @@ namespace MyNews.Storage
                     .WithMany(x => x.Users)
                     .HasForeignKey(x => x.RoleId)
                     .OnDelete(DeleteBehavior.Cascade);
+
                 o.HasOne(x => x.User)
                     .WithMany(x => x.Roles)
                     .HasForeignKey(x => x.UserId)
