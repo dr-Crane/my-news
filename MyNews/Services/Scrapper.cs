@@ -1,4 +1,5 @@
 ﻿using HtmlAgilityPack;
+using MyNews.Models;
 
 namespace MyNews.Services
 {
@@ -6,20 +7,24 @@ namespace MyNews.Services
     {
         private HtmlWeb web = new HtmlWeb();
 
-        public Tuple<string, string> Run()
+        public NewsModel Run()
         {
             HtmlDocument doc = web.Load("https://bilim.akipress.org/ru/news:1786380?from=portal&place=last&b=2");
+            NewsModel model = new NewsModel();
 
-            var title = doc.DocumentNode.SelectNodes("//*[@id=\"col-left-sidebar\"]/div/div/div[2]/h2").First().InnerText;
+            model.Title = doc.DocumentNode.SelectNodes("//*[@id=\"col-left-sidebar\"]/div/div/div[2]/h2").First().InnerText;
             var text = doc.DocumentNode.SelectNodes("//*[@id=\"col-left-sidebar\"]/div/div/div[2]/div[4]/p");
-            string result="";
+            model.DateTime = doc.DocumentNode.SelectNodes("//*[@id=\"col-left-sidebar\"]/div/div/div[2]/div[2]/span[2]").First().InnerText;
+
+            model.Description = text.First().InnerText;
+
             foreach (var item in text)
             {
-                result += item.InnerText;
-                result += "\n";
+                model.Content += item.InnerText;
+                model.Content += "\n";
             }
 
-            return new Tuple<string, string>(title, result);
+            return model;
         }
     }
 }
