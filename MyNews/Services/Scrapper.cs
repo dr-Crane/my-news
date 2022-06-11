@@ -5,12 +5,6 @@ namespace MyNews.Services
     public class Scrapper
     {
         private HtmlWeb web = new HtmlWeb();
-        //private string _address;
-
-        //public Scrapper(string url)
-        //{
-        //    _address = url;
-        //}
 
         public Tuple<string, string> Run()
         {
