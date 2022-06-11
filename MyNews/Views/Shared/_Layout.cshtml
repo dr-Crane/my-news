@@ -11,14 +11,7 @@
 <body>
 
     <main role="main" class="pb-3">
-        @if (!User.Identity.IsAuthenticated)
-        {
-            @RenderBody()
-        }
-        else
-        {
-            @User.Identity.Name
-        }
+        @RenderBody()
     </main>
 
 
