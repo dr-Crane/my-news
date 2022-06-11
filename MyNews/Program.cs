@@ -1,12 +1,15 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using MyNews.Services;
 using MyNews.Storage;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddScoped<IUsersService, UsersService>();
 
 // DB connection
 builder.Services.AddDbContext<ApplicationDbContext>(options =>

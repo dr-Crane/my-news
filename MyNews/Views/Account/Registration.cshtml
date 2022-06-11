@@ -1,0 +1,66 @@
+﻿@model MyNews.Models.ViewModels.RegisterViewModel
+@{
+    ViewData["Title"] = "Registration";
+}
+
+<div class="container d-flex flex-column">
+    <div class="row mt-2 justify-content-center">
+        <img src="~/images/Logo.svg" class="col-3"/>
+    </div>
+    <h2 class="row justify-content-center mt-2">Registration</h2>
+
+    <form class="d-flex flex-column" method="post" asp-controller="Account" asp-action="Registration">
+        <div class="row justify-content-center">
+            <div class="col-4">
+                <div class="form-group">
+                    <input type="text" class="form-control" aria-describedby="NameHelp" 
+                    placeholder="Name" style="text-align:center;" asp-for="Name">
+                    <span class="text-danger" asp-validation-for="Name"></span>
+
+                    <input type="text" class="form-control mt-2"aria-describedby="LastNameHelp" 
+                    placeholder="Last name" style="text-align:center;" asp-for="Surname">
+                    <span class="text-danger" asp-validation-for="Surname"></span>
+
+                    <input type="date" class="form-control mt-2"aria-describedby="BirthDayHelp" 
+                    placeholder="Birthday" style="text-align:center;" asp-for="BirthDate">
+                    <span class="text-danger" asp-validation-for="BirthDate"></span>
+
+                    @*<input type="text" class="form-control mt-2"aria-describedby="UsernameHelp" 
+                    placeholder="Username" style="text-align:center;">*@
+
+                    <input type="email" class="form-control mt-2" aria-describedby="EmailHelp" 
+                    placeholder="Email" style="text-align:center;" asp-for="Email">
+                    <span class="text-danger" asp-validation-for="Email"></span>
+
+                    <input type="text" class="form-control mt-2" aria-describedby="PasswordHelp" 
+                    placeholder="Password" style="text-align:center;" asp-for="Password">
+                    <span class="text-danger" asp-validation-for="Password"></span>
+
+                    <input type="text" class="form-control mt-2" aria-describedby="PasswordCheckHelp" 
+                    placeholder="Repeat password" style="text-align:center;" asp-for="PasswordConfirm">
+                    <span class="text-danger" asp-validation-for="PasswordConfirm"></span>
+                </div>
+                <div class="text-danger" asp-validation-summary="All"></div>
+                <div class="d-flex justify-content-end">
+                    <button type="submit" class="btn mt-2" style="background-color: #757575;
+                     color: white;">
+                            Submit
+                    </button>
+                </div>
+            </div>
+
+
+        </div>
+
+        
+    </form>
+
+</div>
+
+<footer class="footer fixed-bottom"> 
+    <div class="text-muted py-4" style="background-color: #757575;">
+    <div class="container d-flex justify-content-center">
+        <span style="color:white;">TSU, HITs 2022</span>
+    </div>
+    </div>
+</footer>
